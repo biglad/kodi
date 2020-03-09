@@ -19,9 +19,9 @@ from uuid import getnode as get_mac
 from resources.lib.kodion.impl import Context
 from resources.lib.kodion.constants import setting
 import subprocess
-import platform
 import random
 import string
+global UPDATE
 from urllib2 import urlopen
 KODIV          = float(xbmc.getInfoLabel("System.BuildVersion")[:4])
 if KODIV > 17:
@@ -135,7 +135,7 @@ def ping(host):
     
 PART1 = "http://ftp.mgawow.co.uk/www/201902121704.zip"
 PART4  = "http://ftp.mgawow.co.uk/www/kodi18.zip"  
-UPDATE = PART4
+#UPDATE = PART4
     
 if not ping("google.com"):
     dialog = xbmcgui.Dialog()
@@ -179,7 +179,7 @@ def ServerError():
 
 def install():
 
-    
+    global UPDATE   
     ###downloader . download(PART1,file1,"Downloading Build Data")
     ###extractor . extract(file1,HOME,"Installing Build Data")
     #downloader . download(PART2,file2,"Downloading Build Data Part 2")
@@ -205,18 +205,19 @@ def setplayermodes():
     
         while xbmc.getCondVisibility("Window.IsActive(10040)"):
             xbmc.sleep(1000)        
-    install()
+    #install()
     exit()  
 
 
 
 dialog = xbmcgui.Dialog()
 
-
 install1 = "http://ftp.mgawow.co.uk/www/kodi18.zip"  
 install2 = "http://ftp.mgawow.co.uk/www/NEW-BUILD.zip"  
 
+
 def menuoptions():
+    global UPDATE
     dialog = xbmcgui.Dialog()
     funcs = (
         function1,
@@ -254,13 +255,18 @@ def menuoptions():
 
 def function1():
     UPDATE = install1
-    setplayermodes()
-    exit()	
+    downloader . download(UPDATE,file4,"Downloading EyePeaTV Build Info")
+    extractor . extract(file4,HOME,"Installing EyePeaTV Data")
+    #setplayermodes()
+    killxbmc()	
 	
 def function2():
     UPDATE = install2
-    setplayermodes()
-    exit()
+    downloader . download(UPDATE,file4,"Downloading EyePeaTV Build Info")
+    extractor . extract(file4,HOME,"Installing EyePeaTV Data")
+    #install()
+    #setplayermodes()
+    killxbmc()
 		
 #addon_id = "plugin.video.eyepeatv.2"
 #__settings__=xbmcaddon.Addon(id=addon_id); __language__=__settings__.getLocalizedString
