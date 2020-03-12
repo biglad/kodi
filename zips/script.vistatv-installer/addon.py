@@ -222,7 +222,8 @@ def menuoptions():
     dialog = xbmcgui.Dialog()
     funcs = (
         function1,
-        function2
+        function2,
+        function3
 		)
         
     call = dialog.select('[B][COLOR=yellow]EPTV Kodi Build Installer[/COLOR][/B]', [
