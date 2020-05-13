@@ -215,6 +215,7 @@ dialog = xbmcgui.Dialog()
 install1 = "http://ftp.mgawow.co.uk/www/kodi18.zip"  
 install2 = "http://ftp.mgawow.co.uk/www/NEW-BUILD.zip"  
 install3 = "http://ftp.mgawow.co.uk/www/NEW-SKYQ.zip"  
+install4 = "http://ftp.mgawow.co.uk/www/TITAN-BUILD.zip"
 
 
 def menuoptions():
@@ -223,13 +224,15 @@ def menuoptions():
     funcs = (
         function1,
         function2,
-        function3
+        function3,
+        function4
 		)
         
     call = dialog.select('[B][COLOR=yellow]EPTV Kodi Build Installer[/COLOR][/B]', [
     "[B][COLOR=orange]      Smarters For Kodi[/COLOR][/B] (Gold & Normal)", #1
     "[B][COLOR=orange]      Simple For Kodi[/COLOR][/B] (Gold ONLY!)",#2
     "[B][COLOR=orange]      SkyQ Theme[/COLOR][/B] (Gold ONLY!)",#3
+    "[B][COLOR=orange]      Titan Theme[/COLOR][/B] (Gold ONLY!)",#4
     ])
     # dialog.selectreturns
     #   0 -> escape pressed
@@ -239,7 +242,7 @@ def menuoptions():
         # esc is not pressed
         if call < 0:
             return
-        func = funcs[call-3]
+        func = funcs[call-4]
         #if myplatform == 'windows':
         #    func = funcs[call-23]
         #dp = xbmcgui.DialogProgress()
@@ -273,6 +276,14 @@ def function2():
     
 def function3():
     UPDATE = install3
+    downloader . download(UPDATE,file4,"Downloading EyePeaTV Build Info")
+    extractor . extract(file4,HOME,"Installing EyePeaTV Data")
+    #install()
+    #setplayermodes()
+    killxbmc()
+    
+def function4():
+    UPDATE = install4
     downloader . download(UPDATE,file4,"Downloading EyePeaTV Build Info")
     extractor . extract(file4,HOME,"Installing EyePeaTV Data")
     #install()
