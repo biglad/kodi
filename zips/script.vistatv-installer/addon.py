@@ -133,8 +133,8 @@ def ping(host):
     # Ping
     return os.system("ping " + ping_str + " " + host) == 0
     
-PART1 = "http://ftp.mgawow.co.uk/www/201902121704.zip"
-PART4  = "http://ftp.mgawow.co.uk/www/kodi18.zip"  
+PART1 = "http://dl.mgawow.co.uk/www/201902121704.zip"
+PART4  = "http://dl.mgawow.co.uk/www/kodi18.zip"  
 #UPDATE = PART4
     
 if not ping("google.com"):
@@ -212,10 +212,10 @@ def setplayermodes():
 
 dialog = xbmcgui.Dialog()
 
-install1 = "http://ftp.mgawow.co.uk/www/kodi18.zip"  
-install2 = "http://ftp.mgawow.co.uk/www/NEW-BUILD.zip"  
-install3 = "http://ftp.mgawow.co.uk/www/NEW-SKYQ.zip"  
-install4 = "http://ftp.mgawow.co.uk/www/TITAN-BUILD.zip"
+install1 = "http://dl.mgawow.co.uk/www/kodi18.zip"  
+install2 = "http://dl.mgawow.co.uk/www/NEW-BUILD.zip"  
+install3 = "http://dl.mgawow.co.uk/www/NEW-SKYQ.zip"  
+install4 = "http://dl.mgawow.co.uk/www/TITAN-BUILD.zip"
 
 
 def menuoptions():
